@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://charlie_sprites/charlie_2(64).png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 35 )
+
+[node name="world" type="Node" index="0"]
+
+[node name="charlie" type="KinematicBody2D" parent="." index="0"]
+
+position = Vector2( 64, 480 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="charlie" index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="charlie" index="1"]
+
+position = Vector2( -9.5, 2.93571 )
+scale = Vector2( 1.73077, 0.919361 )
+shape = SubResource( 2 )
+
+
